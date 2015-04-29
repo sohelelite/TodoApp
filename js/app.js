@@ -16,6 +16,10 @@ ionicApp.run(function($ionicPlatform, $rootScope, $timeout) {
     //  StatusBar.styleDefault();
     //}
       console.log('i m in platform ready');
+      console.log("cordova:",$ionicPlatform.isCordova());
+      console.log("paltform:",$ionicPlatform.platform());
+      console.log("version:",$ionicPlatform.version());
+
       window.plugin.notification.local.onadd = function (id, state, json) {
           var notification = {
               id: id,

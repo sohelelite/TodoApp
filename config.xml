@@ -26,6 +26,7 @@
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
 
+  <gap:plugin name="org.apache.cordova.device" version="0.2.12" />
   <gap:plugin name="de.appplant.cordova.plugin.local-notification" version="0.8.1" />
 
 </widget>
