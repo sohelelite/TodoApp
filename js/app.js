@@ -30,7 +30,11 @@ ionicApp.run(function($ionicPlatform, $rootScope, $timeout) {
   });
 });
 
-ionicApp.controller("ExampleController", function($scope, $cordovaLocalNotification) {
+ionicApp.controller("ExampleController", function($scope,$ionicPlatform, $cordovaLocalNotification) {
+
+    $ionicPlatform.ready(function() {
+        console.log('i m ionicplatform ready function');
+    });
 
     $scope.$on("$cordovaLocalNotification:added", function(id, state, json) {
         alert("Added a notification");
