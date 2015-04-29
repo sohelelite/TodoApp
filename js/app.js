@@ -16,6 +16,7 @@ ionicApp.run(function($ionicPlatform, $rootScope, $timeout) {
       StatusBar.styleDefault();
     }
 
+      console.log('ionicplatform ready');
       window.plugin.notification.local.onadd = function (id, state, json) {
           var notification = {
               id: id,
@@ -23,6 +24,7 @@ ionicApp.run(function($ionicPlatform, $rootScope, $timeout) {
               json: json
           };
           $timeout(function() {
+              console.log('timeout from local');
               $rootScope.$broadcast("$cordovaLocalNotification:added", notification);
           });
       };
@@ -32,6 +34,10 @@ ionicApp.run(function($ionicPlatform, $rootScope, $timeout) {
 
 ionicApp.controller("ExampleController", function($scope,$ionicPlatform, $cordovaLocalNotification) {
     console.log('i m in controller');
+
+    $ionicPlatform.ready(function() {
+        console.log('im ready from controller');
+    });
 
     $ionicPlatform.ready(function() {
         $scope.$on("$cordovaLocalNotification:added", function(id, state, json) {
