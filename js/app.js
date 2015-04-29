@@ -9,12 +9,12 @@ ionicApp.run(function($ionicPlatform, $rootScope, $timeout) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if(window.StatusBar) {
-      StatusBar.styleDefault();
-    }
+    //if(window.cordova && window.cordova.plugins.Keyboard) {
+    //  cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+    //}
+    //if(window.StatusBar) {
+    //  StatusBar.styleDefault();
+    //}
       console.log('i m in platform ready');
       window.plugin.notification.local.onadd = function (id, state, json) {
           var notification = {
@@ -31,6 +31,10 @@ ionicApp.run(function($ionicPlatform, $rootScope, $timeout) {
 });
 
 ionicApp.controller("ExampleController", function($scope,$ionicPlatform, $cordovaLocalNotification) {
+    console.log('i m in controller');
+    $ionicPlatform.ready(function() {
+        alert('Device is Ready');
+    });
 
     $ionicPlatform.ready(function() {
         console.log('i m ionicplatform ready function');
