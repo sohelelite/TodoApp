@@ -32,7 +32,7 @@ ionicApp.run(function($ionicPlatform, $rootScope, $timeout) {
   });
 });
 
-ionicApp.controller("ExampleController", function($scope,$ionicPlatform, $cordovaLocalNotification) {
+ionicApp.controller("ExampleController", function($scope,$ionicPlatform,$cordovaDevice, $cordovaLocalNotification) {
     console.log('i m in controller');
 
     document.addEventListener("deviceready", function () {
