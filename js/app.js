@@ -15,7 +15,7 @@ ionicApp.run(function($ionicPlatform, $rootScope, $timeout) {
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
-
+      console.log('i m in platform ready');
       window.plugin.notification.local.onadd = function (id, state, json) {
           var notification = {
               id: id,
