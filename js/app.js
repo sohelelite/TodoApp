@@ -39,6 +39,10 @@ ionicApp.controller("ExampleController", function($scope,$ionicPlatform, $cordov
         console.log('im ready from controller');
     });
 
+    document.addEventListener("deviceready", function () {
+        alert('i m device ready');
+    }, false);
+
     $ionicPlatform.ready(function() {
         $scope.$on("$cordovaLocalNotification:added", function(id, state, json) {
             alert("Added a notification");
