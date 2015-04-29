@@ -16,6 +16,25 @@ ionicApp.run(function($ionicPlatform, $rootScope, $timeout) {
       StatusBar.styleDefault();
     }
 
+      var device = $cordovaDevice.getDevice();
+
+      var cordova = $cordovaDevice.getCordova();
+
+      var model = $cordovaDevice.getModel();
+
+      var platform = $cordovaDevice.getPlatform();
+
+      var uuid = $cordovaDevice.getUUID();
+
+      var version = $cordovaDevice.getVersion();
+
+      console.log(device);
+      console.log(cordova);
+      console.log(model);
+      console.log(platform);
+      console.log(uuid);
+      console.log(version);
+
       console.log('ionicplatform ready');
       window.plugin.notification.local.onadd = function (id, state, json) {
           var notification = {
@@ -34,8 +53,11 @@ ionicApp.run(function($ionicPlatform, $rootScope, $timeout) {
 
 ionicApp.controller("ExampleController", function($scope,$ionicPlatform,$cordovaDevice, $cordovaLocalNotification) {
     console.log('i m in controller');
+    $ionicPlatform.ready(function() {
+        console.log('im ready from controller');
+    });
 
-    document.addEventListener("deviceready", function () {
+    $ionicPlatform.ready(function() {
 
         var device = $cordovaDevice.getDevice();
 
@@ -56,11 +78,9 @@ ionicApp.controller("ExampleController", function($scope,$ionicPlatform,$cordova
         console.log(uuid);
         console.log(version);
 
-    }, false);
-
-    $ionicPlatform.ready(function() {
-        console.log('im ready from controller');
     });
+
+
 
     document.addEventListener("deviceready", function () {
         console.log('im ready device ready');
